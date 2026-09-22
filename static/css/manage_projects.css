@@ -1,0 +1,274 @@
+/*==================================================
+                MANAGE PROJECTS
+==================================================*/
+
+.projects-table{
+
+    margin-top:35px;
+
+    overflow-x:auto;
+
+    background:rgba(255,255,255,.04);
+
+    border:1px solid rgba(56,189,248,.15);
+
+    border-radius:18px;
+
+    -webkit-backdrop-filter:blur(12px);
+    
+    backdrop-filter:blur(12px);
+
+
+    box-shadow:0 12px 35px rgba(0,0,0,.25);
+
+}
+
+/*==================================================
+                    TABLE
+==================================================*/
+
+.projects-table table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    min-width:950px;
+
+}
+
+.projects-table thead{
+
+    background:rgba(56,189,248,.08);
+
+}
+
+.projects-table th{
+
+    padding:18px;
+
+    text-align:left;
+
+    color:var(--primary);
+
+    font-size:15px;
+
+    font-weight:700;
+
+    letter-spacing:.5px;
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+.projects-table td{
+
+    padding:16px 18px;
+
+    color:var(--text);
+
+    vertical-align:middle;
+
+    border-bottom:1px solid rgba(255,255,255,.06);
+
+}
+
+.projects-table tbody tr{
+
+    transition:.35s;
+
+}
+
+.projects-table tbody tr:hover{
+
+    background:rgba(56,189,248,.05);
+
+}
+
+/*==================================================
+                PROJECT IMAGE
+==================================================*/
+
+.table-image{
+
+    width:70px;
+
+    height:50px;
+
+    object-fit:cover;
+
+    border-radius:10px;
+
+    border:2px solid rgba(56,189,248,.25);
+
+    transition:.35s;
+
+}
+
+.table-image:hover{
+
+    transform:scale(1.08);
+
+    border-color:var(--primary);
+
+}
+
+/*==================================================
+                STATUS BADGES
+==================================================*/
+
+.status{
+
+    display:inline-block;
+
+    padding:6px 12px;
+
+    border-radius:30px;
+
+    font-size:13px;
+
+    font-weight:600;
+
+}
+
+.status.published{
+
+    background:rgba(34,197,94,.15);
+
+    color:#22c55e;
+
+}
+
+.status.draft{
+
+    background:rgba(234,179,8,.15);
+
+    color:#facc15;
+
+}
+
+.status.featured{
+
+    background:rgba(56,189,248,.15);
+
+    color:var(--primary);
+
+}
+
+/*==================================================
+                ACTION BUTTONS
+==================================================*/
+
+.table-btn{
+
+    width:38px;
+
+    height:38px;
+
+    display:inline-flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:10px;
+
+    margin-right:8px;
+
+    text-decoration:none;
+
+    transition:.35s;
+
+}
+
+.table-btn.edit{
+
+    background:rgba(56,189,248,.12);
+
+    color:var(--primary);
+
+}
+
+.table-btn.edit:hover{
+
+    background:var(--primary);
+
+    color:#071018;
+
+}
+
+.table-btn.delete{
+
+    background:rgba(239,68,68,.12);
+
+    color:#ef4444;
+
+}
+
+.table-btn.delete:hover{
+
+    background:#ef4444;
+
+    color:#fff;
+
+}
+
+/*==================================================
+                HEADER
+==================================================*/
+
+.dashboard-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:25px;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+}
+
+.dashboard-header h1{
+
+    margin:0;
+
+}
+
+.dashboard-header p{
+
+    margin-top:8px;
+
+    color:var(--muted);
+
+}
+
+/*==================================================
+                RESPONSIVE
+==================================================*/
+
+@media(max-width:992px){
+
+    .projects-table{
+
+        overflow-x:auto;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .dashboard-header{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+    }
+
+}

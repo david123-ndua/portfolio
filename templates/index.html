@@ -1,0 +1,109 @@
+{% extends "layout.html" %}
+
+{% block title %}Home | David Kyalo{% endblock %}
+
+{% block page_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+
+    <!-- =======================
+        PROFILE IMAGE
+    ======================== -->
+
+    <div class="hero-image fade-left">
+
+        <div class="image-frame">
+
+            <img src="{{ url_for('static', filename='images/profile_image.jpg') }}"
+                alt="David Kyalo">
+
+        </div>
+
+    </div>
+
+    <!-- =======================
+        HERO CONTENT
+    ======================== -->
+
+    <div class="hero-content fade-right">
+
+        <p class="intro">
+
+            Hello, I'm
+            <span class="name glow">
+                David Kyalo
+            </span>
+
+        </p>
+
+        <h1>
+            Full Stack Developer
+        </h1>
+
+        <div class="typing-container">
+
+            <span id="typing-text">
+                Java Developer
+            </span>
+
+            <span class="cursor">|</span>
+
+        </div>
+
+        <div class="tech-stack">
+
+            <span>Java</span>
+            <span>JavaScript</span>
+            <span>Flask</span>
+            <span>React</span>
+            <span>Node.js</span>
+            <span>MongoDB</span>
+            <span>MySQL</span>
+
+        </div>
+
+        <p class="description">
+
+            Resourceful and practical Full Stack Developer with experience
+            designing, building and deploying responsive web applications.
+
+            Passionate about writing clean, maintainable code while creating
+            modern user experiences and scalable backend systems.
+
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="{{ url_for('static', filename='uploads/David_CV.pdf') }}"
+                class="btn btn-primary"
+                target="_blank">
+
+                <i class="fas fa-download"></i>
+
+                Download CV
+
+            </a>
+
+            <a href="{{ url_for('projects') }}" class="btn btn-outline">
+
+                <i class="fas fa-code"></i>
+
+                View Projects
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}
+
+{% block page_js %}
+<script src="{{ url_for('static', filename='js/home.js') }}"></script>
+{% endblock %}

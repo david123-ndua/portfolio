@@ -1,0 +1,216 @@
+{% extends "layout.html" %}
+
+{% block title %}Edit Project{% endblock %}
+
+{% block page_css %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/add_project.css') }}">
+
+{% endblock %}
+
+{% block content %}
+
+<section class="dashboard container">
+
+    <div class="dashboard-header">
+
+        <div>
+
+            <h1>Edit Project</h1>
+
+            <p>Update your portfolio project.</p>
+
+        </div>
+
+        <a href="{{ url_for('manage_projects') }}" class="btn btn-outline">
+
+            <i class="fas fa-arrow-left"></i>
+
+            Back
+
+        </a>
+
+    </div>
+
+    <form
+        method="POST" enctype="multipart/form-data"
+        class="project-form">
+
+        <div class="form-group">
+
+            <label>Project Title</label>
+
+            <input
+                type="text"
+                name="title"
+                value="{{ project.title }}"
+                required>
+
+        </div>
+
+        <div class="form-group">
+
+            <label>Description</label>
+
+            <textarea
+                name="description"
+                rows="5"
+                required>{{ project.description }}</textarea>
+
+        </div>
+
+        <div class="form-group">
+
+            <label>Category</label>
+
+            <select name="category">
+
+                <option value="web"
+                {% if project.category=="web" %}selected{% endif %}>
+                Web Development
+                </option>
+
+                <option value="desktop"
+                {% if project.category=="desktop" %}selected{% endif %}>
+                Desktop Application
+                </option>
+
+                <option value="mobile"
+                {% if project.category=="mobile" %}selected{% endif %}>
+                Mobile App
+                </option>
+
+                <option value="ai"
+                {% if project.category=="ai" %}selected{% endif %}>
+                Artificial Intelligence
+                </option>
+
+                <option value="database"
+                {% if project.category=="database" %}selected{% endif %}>
+                Database
+                </option>
+
+                <option value="java"
+                {% if project.category=="java" %}selected{% endif %}>
+                Java
+                </option>
+
+                <option value="python"
+                {% if project.category=="python" %}selected{% endif %}>
+                Python
+                </option>
+
+                <option value="flask"
+                {% if project.category=="flask" %}selected{% endif %}>
+                Flask
+                </option>
+
+            </select>
+
+        </div>
+
+        <div class="form-group">
+
+            <label>Technologies</label>
+
+            <input
+                type="text"
+                name="technologies"
+                value="{{ project.technologies }}">
+
+        </div>
+
+        <div class="form-group">
+
+            <label>GitHub Repository</label>
+
+            <input
+                type="url"
+                name="github"
+                value="{{ project.github_link }}">
+
+        </div>
+
+        <div class="form-group">
+
+            <label>Live Demo</label>
+
+            <input
+                type="url"
+                name="demo"
+                value="{{ project.demo_link }}">
+
+        </div>
+
+        <div class="form-group">
+
+            <label>Current Image</label>
+
+            {% if project.image %}
+
+            <img
+
+            id="imagePreview"
+
+            src="{{ url_for('static',
+            filename='uploads/' + project.image) }}"
+
+            class="preview-image"
+
+            alt="{{ project.title }}">
+
+            {% else %}
+
+            <img
+
+            id="imagePreview"
+
+            src="{{ url_for('static',
+            filename='images/project-placeholder.png') }}"
+
+            class="preview-image"
+
+            alt="Preview">
+
+            {% endif %}
+
+        </div>
+
+        <div class="form-group">
+
+            <label>Replace Image</label>
+
+            <input
+
+                type="file"
+
+                id="image"
+
+                name="image"
+
+                accept=".png,.jpg,.jpeg,.webp">
+
+        </div>
+
+        <button
+            class="btn btn-primary">
+
+            <i class="fas fa-save"></i>
+
+            Update Project
+
+        </button>
+
+    </form>
+
+</section>
+
+{% endblock %}
+
+{% block page_js %}
+
+<script src="{{ url_for('static', filename='js/add_project.js') }}"></script>
+
+{% endblock %}

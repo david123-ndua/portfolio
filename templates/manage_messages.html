@@ -1,0 +1,164 @@
+{% extends "layout.html" %}
+
+{% block title %}Contact Messages{% endblock %}
+
+{% block page_css %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/messages.css') }}">
+
+{% endblock %}
+
+
+{% block content %}
+
+<section class="dashboard container">
+
+    <div class="dashboard-header">
+
+        <div>
+
+            <h1>Contact Messages</h1>
+
+            <p>
+                {{ messages|length }} message(s) received.
+            </p>
+
+        </div>
+
+        <a href="{{ url_for('dashboard') }}" class="btn btn-outline">
+
+            <i class="fas fa-arrow-left"></i>
+
+            Dashboard
+
+        </a>
+
+    </div>
+
+
+    {% if messages %}
+
+        <div class="messages-list">
+
+            {% for message in messages %}
+
+                <article class="message-card">
+
+                    <div class="message-header">
+
+                        <div>
+
+                            <h3>{{ message.name }}</h3>
+
+                            <span class="message-email">
+                                {{ message.email }}
+                            </span>
+
+                        </div>
+
+                        <span class="message-date">
+                            {{ message.created_at }}
+                        </span>
+
+                    </div>
+
+
+                    <div class="message-subject">
+
+                        <strong>Subject:</strong>
+
+                        {{ message.subject }}
+
+                    </div>
+
+
+                    <div class="message-body">
+
+                        {{ message.message }}
+
+                    </div>
+
+
+                    <div class="message-controls">
+
+                    <div class="message-status">
+
+                            {% if message.is_read == 1 %}
+
+                            <span class="status read">
+                                Read
+                            </span>
+
+                            <a href="{{ url_for('toggle_message_read', id=message.id) }}"
+                            class="table-btn">
+
+                                Unread
+
+                            </a>
+
+                        {% else %}
+
+                            <span class="status unread">
+                                Unread
+                            </span>
+
+                            <a href="{{ url_for('toggle_message_read', id=message.id) }}"
+                            class="table-btn">
+
+                                Read
+
+                            </a>
+
+                        {% endif %}
+
+                        </div>
+
+                        <div class="message-actions">
+
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to={{ message.email|urlencode }}&su=Re:%20{{ message.subject|urlencode }}"
+                        class="table-btn reply"
+                        target="_blank">
+
+                            Reply
+
+                        </a>
+
+                            <a href="{{ url_for('delete_message', id=message.id) }}"
+                            class="table-btn delete"
+                            onclick="return confirm('Delete this message?')">
+
+                                Delete
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            {% endfor %}
+
+        </div>
+
+    {% else %}
+
+        <div class="empty-state">
+
+            <i class="fas fa-envelope-open"></i>
+
+            <h2>No Messages Yet</h2>
+
+            <p>
+                Messages submitted through your contact form will appear here.
+            </p>
+
+        </div>
+
+    {% endif %}
+
+</section>
+
+{% endblock %}

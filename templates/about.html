@@ -1,0 +1,417 @@
+{% extends "layout.html" %}
+
+{% block title %}About | David Kyalo{% endblock %}
+
+{% block page_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<!-- ===================================== -->
+<!-- ABOUT HERO -->
+<!-- ===================================== -->
+
+<section class="container about-hero">
+
+    <div class="about-image fade-left">
+
+        <div class="about-image-frame">
+
+            <img src="{{ url_for('static', filename='images/profile_image.jpg') }}" alt="David Kyalo">
+
+        </div>
+
+    </div>
+
+    <div class="about-content fade-right">
+
+        <p class="section-tag">
+            ABOUT ME
+        </p>
+
+        <h1>
+            Building software that solves
+            <span>real-world problems.</span>
+        </h1>
+
+        <p class="about-text">
+
+            Hello! I'm David Kyalo, a Full Stack Developer passionate
+            about building modern, responsive and scalable web applications.
+
+            I enjoy transforming ideas into practical software solutions
+            using clean code and modern development practices.
+
+        </p>
+
+        <p class="about-text">
+
+            My experience includes Java, JavaScript, Flask, React,
+            Node.js, SQLite, MySQL and MongoDB. I believe every project is
+            another opportunity to learn something new and improve
+            my engineering skills.
+
+        </p>
+
+        <a href="{{ url_for('static', filename='uploads/David_CV.pdf') }}"
+                class="btn btn-primary"
+                target="_blank">
+
+                <i class="fas fa-download"></i>
+
+                Download CV
+
+        </a>
+
+    </div>
+
+</section>
+
+<!-- ===================================== -->
+<!-- JOURNEY -->
+<!-- ===================================== -->
+
+<section class="journey container">
+
+    <h2 class="section-title">
+
+        My Journey
+
+    </h2>
+
+    <div class="section-divider"></div>
+
+    <div class="timeline">
+
+        <div class="timeline-item">
+
+            <div class="circle"></div>
+
+            <div class="timeline-content">
+
+                <h3>Started Programming</h3>
+
+                <p>
+
+                    Learned programming fundamentals and developed
+                    logical thinking through C and Java.
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="timeline-item">
+
+            <div class="circle"></div>
+
+            <div class="timeline-content">
+
+                <h3>Frontend Development</h3>
+
+                <p>
+
+                    Built responsive user interfaces using HTML,
+                    CSS and JavaScript.
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="timeline-item">
+
+            <div class="circle"></div>
+
+            <div class="timeline-content">
+
+                <h3>Backend Development</h3>
+
+                <p>
+
+                    Developed Flask applications,
+                    REST APIs MySQL, MongoDB and SQLite  databases.
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="timeline-item">
+
+            <div class="circle"></div>
+
+            <div class="timeline-content">
+
+                <h3>Full Stack Development</h3>
+
+                <p>
+
+                    Currently building complete web applications
+                    using the MERN stack and modern backend tools.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ===================================== -->
+<!-- EDUCATION -->
+<!-- ===================================== -->
+
+<section class="education container">
+
+    <h2 class="section-title">
+
+        Education
+
+    </h2>
+
+    <div class="section-divider"></div>
+
+    <div class="education-grid">
+
+        <div class="education-card">
+
+            <i class="fas fa-graduation-cap"></i>
+
+            <h3>
+
+                Jomo Kenyatta University of Agriculture and Technology
+
+            </h3>
+
+            <h4>
+
+                Bachelor of Science
+
+            </h4>
+
+            <p>
+
+                Pursuing a degree in Business Computing with a strong
+                focus on software engineering, databases,
+                networking and web technologies.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ===================================== -->
+<!-- TECHNICAL SKILLS -->
+<!-- ===================================== -->
+
+<section class="expertise container">
+
+    <h2 class="section-title">
+
+        Technical Skills
+
+    </h2>
+
+    <div class="section-divider"></div>
+
+    <div class="expertise-grid">
+
+        <div class="expertise-card">
+
+            <h3>Backend</h3>
+
+            <ul>
+
+                <li>Java</li>
+
+                <li>Flask</li>
+
+                <li>Node.js</li>
+
+                <li>MySQL</li>
+
+                <li>SQLite</li>
+
+                <li>MongoDB</li>
+
+            </ul>
+
+        </div>
+
+        <div class="expertise-card">
+
+            <h3>Frontend</h3>
+
+            <ul>
+
+                <li>HTML5</li>
+
+                <li>CSS3</li>
+
+                <li>JavaScript</li>
+
+                <li>Bootstrap</li>
+
+                <li>React</li>
+
+            </ul>
+
+        </div>
+
+        <div class="expertise-card">
+
+            <h3>Tools</h3>
+
+            <ul>
+
+                <li>Git</li>
+
+                <li>GitHub</li>
+
+                <li>VS Code</li>
+
+                <li>Postman</li>
+
+                <li>SQLite Studio</li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ===================================== -->
+<!-- WHAT I LOVE BUILDING -->
+<!-- ===================================== -->
+
+<section class="education container">
+
+    <h2 class="section-title">
+
+        What I Love Building
+
+    </h2>
+
+    <div class="section-divider"></div>
+
+    <div class="build-grid">
+
+        <div class="build-card">
+
+            <i class="fas fa-globe"></i>
+
+            <h3>Responsive Websites</h3>
+
+            <p>
+
+                Modern interfaces that work beautifully on every device.
+
+            </p>
+
+        </div>
+
+        <div class="build-card">
+
+            <i class="fas fa-server"></i>
+
+            <h3>REST APIs</h3>
+
+            <p>
+
+                Secure backend services with clean architecture.
+
+            </p>
+
+        </div>
+
+        <div class="build-card">
+
+            <i class="fas fa-database"></i>
+
+            <h3>Database Systems</h3>
+
+            <p>
+
+                Well-structured databases with efficient data management.
+
+            </p>
+
+        </div>
+
+        <div class="build-card">
+
+            <i class="fas fa-credit-card"></i>
+
+            <h3>Payment Solutions</h3>
+
+            <p>
+
+                Building secure online payment workflows and integrations.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ===================================== -->
+<!-- CALL TO ACTION -->
+<!-- ===================================== -->
+
+<section class="about-cta container">
+
+    <div class="cta-box">
+
+        <h2>
+
+            Interested in working together?
+
+        </h2>
+
+        <p>
+
+            I'm always excited to collaborate on meaningful
+            software projects, solve challenging problems,
+            and continue growing as a Full Stack Developer.
+
+        </p>
+
+        <div class="cta-buttons">
+
+            <a href="{{ url_for('projects') }}" class="btn btn-primary">
+
+                View Projects
+
+            </a>
+
+            <a href="{{ url_for('contact') }}" class="btn btn-outline">
+
+                Contact Me
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}
+
+{% block page_js %}
+<script src="{{ url_for('static', filename='js/about.js') }}"></script>
+{% endblock %}

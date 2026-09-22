@@ -1,0 +1,683 @@
+/*==================================================
+                MESSAGES PAGE
+==================================================*/
+
+.messages-list {
+
+    width: 100%;
+    max-width: 1050px;
+
+    margin: 35px auto 0;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 22px;
+
+}
+
+
+/*==================================================
+                MESSAGE CARD
+==================================================*/
+
+.message-card {
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 24px;
+
+    background: rgba(255, 255, 255, .035);
+
+    border: 1px solid rgba(56, 189, 248, .18);
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, .22);
+
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+
+    transition:
+        transform .3s ease,
+        border-color .3s ease,
+        box-shadow .3s ease;
+
+}
+
+
+.message-card:hover {
+
+    transform: translateY(-2px);
+
+    border-color: rgba(56, 189, 248, .35);
+
+    box-shadow:
+        0 16px 35px rgba(0, 0, 0, .28);
+
+}
+
+
+/*==================================================
+                MESSAGE HEADER
+==================================================*/
+
+.message-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    gap: 20px;
+
+    padding-bottom: 16px;
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, .07);
+
+}
+
+
+.message-header h3 {
+
+    margin: 0 0 5px;
+
+    color: var(--white);
+
+    font-size: 18px;
+
+    font-weight: 600;
+
+    word-break: break-word;
+
+}
+
+
+.message-email {
+
+    color: var(--primary);
+
+    font-size: 14px;
+
+    word-break: break-word;
+
+}
+
+
+.message-date {
+
+    color: var(--muted);
+
+    font-size: 12px;
+
+    white-space: nowrap;
+
+}
+
+
+/*==================================================
+                SUBJECT
+==================================================*/
+
+.message-subject {
+
+    margin-top: 17px;
+
+    color: var(--text);
+
+    font-size: 15px;
+
+}
+
+
+.message-subject strong {
+
+    color: var(--primary);
+
+}
+
+
+/*==================================================
+                MESSAGE BODY
+==================================================*/
+
+.message-body {
+
+    margin-top: 12px;
+
+    padding: 14px 16px;
+
+    background: rgba(0, 0, 0, .13);
+
+    border-radius: 10px;
+
+    color: var(--text);
+
+    line-height: 1.55;
+
+    text-align: left;
+
+    white-space: pre-wrap;
+
+    word-break: break-word;
+
+    overflow-wrap: anywhere;
+
+}
+
+
+/*==================================================
+                MESSAGE CONTROLS
+==================================================*/
+
+.message-controls {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 18px;
+    margin-top: 16px;
+}
+
+
+/*==================================================
+                STATUS
+==================================================*/
+
+.message-status {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin: 0;
+
+    flex-wrap: nowrap;
+
+}
+
+
+/*==================================================
+                STATUS LABEL
+==================================================*/
+
+.status {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 34px;
+
+    padding: 0 12px;
+
+    border-radius: 17px;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    line-height: 1;
+
+    white-space: nowrap;
+
+    box-sizing: border-box;
+
+}
+
+
+.status.unread {
+
+    color: #fbbf24;
+
+    background: rgba(245, 158, 11, .08);
+
+    border:
+        1px solid rgba(245, 158, 11, .30);
+
+}
+
+
+.status.read {
+
+    color: #4ade80;
+
+    background: rgba(34, 197, 94, .08);
+
+    border:
+        1px solid rgba(34, 197, 94, .30);
+
+}
+
+
+/*==================================================
+                ALL MESSAGE BUTTONS
+==================================================*/
+
+.message-controls .table-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    min-height: 34px;
+
+    padding: 0 12px;
+
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    font-weight: 500;
+
+    line-height: 1;
+
+    white-space: nowrap;
+
+    box-sizing: border-box;
+
+    transition:
+        background .25s ease,
+        border-color .25s ease,
+        color .25s ease,
+        transform .25s ease;
+
+}
+
+
+.message-controls .table-btn i {
+
+    font-size: 12px;
+
+    flex-shrink: 0;
+
+}
+
+
+/*==================================================
+                MARK READ / UNREAD
+==================================================*/
+
+.message-status .table-btn {
+
+    color: var(--text);
+
+    background: rgba(255, 255, 255, .045);
+
+    border:
+        1px solid rgba(255, 255, 255, .14);
+
+}
+
+
+.message-status .table-btn:hover {
+
+    color: var(--primary);
+
+    background:
+        rgba(56, 189, 248, .08);
+
+    border-color:
+        rgba(56, 189, 248, .30);
+
+    transform: translateY(-1px);
+
+}
+
+
+/*==================================================
+                ACTIONS
+==================================================*/
+
+.message-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin: 0;
+
+}
+
+
+/*==================================================
+                REPLY
+==================================================*/
+
+.message-actions .reply {
+
+    color: var(--primary);
+
+    background:
+        rgba(56, 189, 248, .06);
+
+    border:
+        1px solid rgba(56, 189, 248, .30);
+
+}
+
+
+.message-actions .reply:hover {
+
+    color: #ffffff;
+
+    background:
+        rgba(56, 189, 248, .15);
+
+    border-color:
+        rgba(56, 189, 248, .45);
+
+    transform: translateY(-1px);
+
+}
+
+
+/*==================================================
+                DELETE
+==================================================*/
+
+.message-actions .delete {
+
+    color: #f87171;
+
+    background:
+        rgba(248, 113, 113, .05);
+
+    border:
+        1px solid rgba(248, 113, 113, .28);
+
+}
+
+
+.message-actions .delete:hover {
+
+    color: #ffffff;
+
+    background:
+        rgba(248, 113, 113, .14);
+
+    border-color:
+        rgba(248, 113, 113, .42);
+
+    transform: translateY(-1px);
+
+}
+
+
+/*==================================================
+                EMPTY STATE
+==================================================*/
+
+.empty-state {
+
+    width: 100%;
+
+    max-width: 1050px;
+
+    margin: 35px auto;
+
+    padding: 50px 25px;
+
+    text-align: center;
+
+    background:
+        rgba(255, 255, 255, .035);
+
+    border:
+        1px solid rgba(56, 189, 248, .14);
+
+    border-radius: 18px;
+
+}
+
+
+.empty-state i {
+
+    font-size: 40px;
+
+    color: var(--primary);
+
+    margin-bottom: 15px;
+
+}
+
+
+.empty-state h2 {
+
+    color: var(--white);
+
+    margin-bottom: 8px;
+
+}
+
+
+.empty-state p {
+
+    color: var(--muted);
+
+}
+
+
+/*==================================================
+                TABLET
+==================================================*/
+
+@media (max-width: 900px) {
+
+    .messages-list {
+
+        max-width: 95%;
+
+    }
+
+}
+
+
+/*==================================================
+                MOBILE
+==================================================*/
+
+@media (max-width: 600px) {
+
+    .messages-list {
+
+        width: 92%;
+
+        max-width: none;
+
+        margin-top: 25px;
+
+        gap: 16px;
+
+    }
+
+
+    .message-card {
+
+        padding: 18px;
+
+        border-radius: 15px;
+
+    }
+
+
+    .message-header {
+
+        flex-direction: column;
+
+        gap: 8px;
+
+    }
+
+
+    .message-header h3 {
+
+        font-size: 16px;
+
+    }
+
+
+    .message-email {
+
+        font-size: 13px;
+
+    }
+
+
+    .message-date {
+
+        font-size: 11px;
+
+    }
+
+
+    .message-subject {
+
+        margin-top: 14px;
+
+        font-size: 14px;
+
+    }
+
+
+    .message-body {
+
+        margin-top: 10px;
+
+        padding: 4px 6px;
+
+        line-height: 1.5;
+
+    }
+
+
+    /*----------------------------------------------
+                    CONTROL GRID
+    ----------------------------------------------*/
+
+    
+    .message-controls {
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 8px;
+
+        width: 100%;
+
+        margin-top: 14px;
+
+    }
+
+
+    .message-status {
+
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 8px;
+
+        width: 100%;
+
+    }
+
+.message-actions {
+
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 8px;
+
+        width: 100%;
+
+    }
+
+
+
+    /*----------------------------------------------
+                    MOBILE BUTTONS
+    ----------------------------------------------*/
+
+    .message-controls .table-btn,
+    .message-controls .status {
+
+        width: 100%;
+
+        min-height: 36px;
+
+        padding: 0 8px;
+
+        font-size: 12px;
+        box-sizing: border-box;
+
+    }
+
+
+    .message-controls .table-btn i {
+
+        font-size: 7px;
+
+    }
+
+     .message-controls .table-btn i {
+
+        font-size: 11px;
+
+        flex-shrink: 0;
+
+    }
+
+}
+
+
+/*==================================================
+                SMALL PHONES
+==================================================*/
+
+@media (max-width: 380px) {
+
+    .messages-list {
+
+        width: 94%;
+
+    }
+
+
+    .message-card {
+
+        padding: 15px;
+
+    }
+
+
+    .message-controls .table-btn,
+    .message-controls .status {
+
+        font-size: 11px;
+
+        min-height: 34px;
+
+    }
+
+}

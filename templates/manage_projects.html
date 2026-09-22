@@ -1,0 +1,143 @@
+{% extends "layout.html" %}
+
+{% block title %}Manage Projects{% endblock %}
+
+{% block page_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<section class="dashboard container">
+
+    <div class="dashboard-header">
+
+        <div>
+
+            <h1>Manage Projects</h1>
+
+            <p>{{ projects|length }} project(s) in your portfolio.</p>
+
+        </div>
+
+        <a href="{{ url_for('dashboard') }}" class="btn btn-outline">
+
+            <i class="fas fa-arrow-left"></i>
+
+            Dashboard
+
+        </a>
+
+    </div>
+
+    <table class="projects-table">
+
+        <thead>
+        <tr>
+            <th>Image</th>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Category</th>
+            <th>Technologies</th>
+            <th>Status</th>
+            <th>Actions</th>
+            <th>Featured</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+{% for project in projects %}
+
+<tr>
+
+    <td>
+
+        {% if project.image %}
+
+        <img
+            src="{{ url_for('static', filename='uploads/' + project.image) }}"
+            class="table-image" alt="{{ project.title }}">
+
+        {% else %}
+
+        <img
+            src="{{ url_for('static', filename='images/project-placeholder.png') }}"
+            class="table-image"
+            alt="Project">
+
+        {% endif %}
+
+    </td>
+
+    <td>{{ project.id }}</td>
+
+    <td>{{ project.title }}</td>
+
+    <td>{{ project.category }}</td>
+
+    <td>{{ project.technologies }}</td>
+
+    <td>
+
+        <span class="status {{ project.status|lower }}">
+
+            {{ project.status }}
+
+        </span>
+
+        </td>
+
+        <td>
+
+        <a href="{{ url_for('edit_project', id=project.id) }}"
+        class="table-btn edit">
+
+            <i class="fas fa-edit"></i>
+
+        </a>
+
+        <a href="{{ url_for('delete_project', id=project.id) }}"
+        class="table-btn delete"
+        onclick="return confirm('Delete this project?')">
+
+            <i class="fas fa-trash"></i>
+
+        </a>
+
+        </td>
+        <td>
+
+            {% if project.featured == 1 %}
+
+            <a href="{{ url_for('toggle_featured', id=project.id) }}"
+            class="featured-btn">
+
+                <i class="fas fa-star"></i>
+
+            </a>
+
+            {% else %}
+
+            <a href="{{ url_for('toggle_featured', id=project.id) }}"
+            class="featured-btn inactive">
+
+                <i class="far fa-star"></i>
+
+            </a>
+
+            {% endif %}
+
+        </td>
+
+    </tr>
+
+    {% endfor %}
+
+</tbody>
+
+    </table>
+
+</section>
+
+{% endblock %}

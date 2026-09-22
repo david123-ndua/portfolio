@@ -1,0 +1,147 @@
+{% extends "layout.html" %}
+
+{% block title %}Contact | David Kyalo{% endblock %}
+
+{% block page_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/contact.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<section class="contact-hero container">
+
+    <h1 class="section-title">
+        Let's Connect
+    </h1>
+
+    <p class="section-subtitle">
+
+        Have a project in mind, an internship opportunity,
+        or simply want to say hello?
+        I'd love to hear from you.
+
+    </p>
+
+</section>
+
+
+<section class="contact-info container">
+
+    <div class="contact-card">
+
+        <i class="fas fa-envelope"></i>
+
+        <h3>Email</h3>
+
+        <a href="mailto:nduadavid8@gmail.com">
+
+            nduadavid8@gmail.com
+
+        </a>
+
+    </div>
+
+    <div class="contact-card">
+
+        <i class="fas fa-phone"></i>
+
+        <h3>Phone</h3>
+
+        <a href="tel:+254714716962">
+
+            +254 714 716 962
+
+        </a>
+
+    </div>
+
+    <div class="contact-card">
+
+        <i class="fas fa-location-dot"></i>
+
+        <h3>Location</h3>
+
+        <p>Nairobi, Kenya</p>
+
+    </div>
+
+    <div class="contact-card">
+
+        <i class="fas fa-circle-check"></i>
+
+        <h3>Status</h3>
+
+        <p>Open to Opportunities</p>
+
+    </div>
+
+</section>
+
+
+<section class="contact-form-section container">
+
+    <div class="contact-form-card">
+
+        <h2>
+
+            Send a Message
+
+        </h2>
+
+        <form
+            id="contactForm"
+            method="POST"
+            action="{{ url_for('contact') }}">
+
+            <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Full Name"
+                required>
+
+            <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Email Address" required>
+
+            <input
+                type="text"
+                id="subject"
+                name="subject"
+                placeholder="Subject" required>
+
+            <textarea
+                id="message"
+                name="message"
+                rows="6"
+                placeholder="Write your message" required></textarea>
+
+            <button
+                type="submit"
+                class="btn btn-primary">
+
+                <i class="fas fa-paper-plane"></i>
+
+                Send Message
+
+            </button>
+
+        </form>
+
+        <p class="reply-text">
+
+            Typically responds within 24 hours.
+
+        </p>
+
+    </div>
+
+</section>
+
+{% endblock %}
+
+{% block page_js %}
+<script src="{{ url_for('static', filename='js/contact.js') }}"></script>
+{% endblock %}

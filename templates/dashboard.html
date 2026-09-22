@@ -1,0 +1,193 @@
+{% extends "layout.html" %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block page_css %}
+<link rel="stylesheet"
+href="{{ url_for('static', filename='css/dashboard.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<section class="dashboard container">
+
+    <div class="dashboard-header">
+
+        <div>
+
+            <h1>Dashboard</h1>
+
+            <p>
+                Welcome back,
+                <strong>{{ session.admin }}</strong>
+            </p>
+
+        </div>
+
+        <a href="{{ url_for('logout') }}"
+           class="btn btn-outline">
+
+            <i class="fas fa-sign-out-alt"></i>
+
+            Logout
+
+        </a>
+
+    </div>
+
+
+    <div class="stats-grid">
+
+        <div class="stat-card">
+
+            <i class="fas fa-folder-open"></i>
+
+            <h2>{{ total_projects }}</h2>
+
+            <p>Projects</p>
+
+        </div>
+
+        <div class="stat-card">
+
+        <i class="fas fa-check-circle"></i>
+
+        <h2>Online</h2>
+
+        <p>Portfolio Status</p>
+
+        </div>
+
+    <a href="{{ url_for('manage_messages') }}"
+        class="stat-card stat-card-link">
+
+        <i class="fas fa-envelope"></i>
+
+        <h2>{{ total_messages }}</h2>
+
+        <p>Messages</p>
+
+    </a>
+
+    </div>
+
+
+    <section class="dashboard-recent">
+
+    <h2 class="dashboard-title">
+        Portfolio Overview
+    </h2>
+
+    <div class="overview-card">
+
+        <p>
+            Welcome back,
+            <strong>{{ session.admin }}</strong>.
+        </p>
+
+        <p>
+            Use the dashboard to add new projects, edit existing ones,
+            delete old projects and manage your portfolio.
+        </p>
+
+        <p>
+            Every project you publish here appears automatically
+            on your Projects page.
+        </p>
+
+    </div>
+
+</section>
+
+    <div class="dashboard-actions">
+
+        <a href="{{ url_for('add_project') }}"
+        class="action-card">
+
+            <i class="fas fa-plus-circle"></i>
+
+            <h3>Add Project</h3>
+
+        </a>
+
+        <a href="{{ url_for('manage_projects') }}" class="action-card">
+
+            <i class="fas fa-folder"></i>
+
+            <h3>Manage Projects</h3>
+
+        </a>
+
+        <a href="{{ url_for('change_password') }}" class="action-card">
+
+            <i class="fas fa-key"></i>
+
+            <h3>Change Password</h3>
+
+        </a>
+
+        <a href="{{ url_for('manage_messages') }}"
+            class="action-card">
+
+            <i class="fas fa-envelope"></i>
+
+            <h3>Messages</h3>
+
+        </a>
+
+    </div>
+    
+<!-- ================================================
+    CV MANAGEMENT
+================================================ -->
+
+<h2 class="dashboard-title">
+    CV / Resume
+</h2>
+
+<div class="cv-upload-card">
+
+    <div class="cv-upload-info">
+
+        <i class="fas fa-file-pdf"></i>
+
+        <div>
+            <h3>Manage CV</h3>
+
+            <p>
+                Upload a new PDF CV. 
+            </p>
+        </div>
+
+    </div>
+
+    <form
+        method="POST"
+        action="{{ url_for('upload_cv') }}"
+        enctype="multipart/form-data"
+        class="cv-upload-form">
+
+        <input
+            type="file"
+            name="cv"
+            id="cv"
+            accept=".pdf"
+            required>
+
+        <button
+            type="submit"
+            class="btn btn-primary">
+
+            <i class="fas fa-upload"></i>
+
+            Upload CV
+
+        </button>
+
+    </form>
+
+</div>
+
+</section>
+
+{% endblock %}

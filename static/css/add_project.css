@@ -1,0 +1,313 @@
+/*==================================================
+                ADD PROJECT PAGE
+==================================================*/
+
+.project-form{
+
+    margin-top:35px;
+
+    max-width:850px;
+
+    margin-inline:auto;
+
+    background:rgba(255,255,255,.04);
+
+    border:1px solid rgba(56,189,248,.15);
+
+    border-radius:20px;
+
+    padding:35px;
+
+    -webkit-backdrop-filter:blur(12px);
+
+    backdrop-filter:blur(12px);
+
+
+    box-shadow:0 15px 35px rgba(0,0,0,.25);
+
+}
+
+/*==================================================
+                FORM GROUP
+==================================================*/
+
+.form-group{
+
+    display:flex;
+
+    flex-direction:column;
+
+    margin-bottom:25px;
+
+}
+
+.form-group label{
+
+    color:var(--white);
+
+    font-weight:600;
+
+    margin-bottom:10px;
+
+    font-size:15px;
+
+}
+
+/*==================================================
+                INPUTS
+==================================================*/
+
+.project-form input,
+
+.project-form textarea,
+
+.project-form select{
+
+    width:100%;
+
+    padding:14px 18px;
+
+    border-radius:12px;
+
+    border:1px solid rgba(56,189,248,.20);
+
+    background:rgba(255,255,255,.08);
+
+    color:var(--white);
+
+    font-size:15px;
+
+    transition:.3s;
+
+}
+
+.project-form textarea{
+
+    resize:vertical;
+
+    min-height:140px;
+
+}
+
+.project-form input::placeholder,
+
+.project-form textarea::placeholder{
+
+    color:rgba(255,255,255,.45);
+
+}
+
+.project-form input:focus,
+
+.project-form textarea:focus,
+
+.project-form select:focus{
+
+    outline:none;
+
+    border-color:var(--primary);
+
+    box-shadow:0 0 18px rgba(56,189,248,.20);
+
+}
+
+/*==================================================
+                SELECT
+==================================================*/
+
+/*==================================================*
+*SELECT / CATEGORY*
+*==================================================*/
+
+.project-form select {
+    cursor: pointer;
+
+    appearance: auto;
+    -webkit-appearance: auto;
+
+    background: #111827;
+    color: var(--white);
+
+    border: 1px solid rgba(56,189,248,.25);
+
+    transition: .3s ease;
+}
+
+.project-form select:hover {
+    border-color: var(--primary);
+}
+
+.project-form select:focus {
+    outline: none;
+    border-color: var(--primary);
+
+    box-shadow:
+        0 0 10px rgba(56,189,248,.25),
+        0 0 20px rgba(56,189,248,.10);
+}
+
+.project-form select option {
+    background: #111827;
+    color: #F8FAFC;
+    padding: 12px;
+}
+
+.project-form select option:checked {
+    background: #1E293B;
+    color: var(--primary);
+}
+
+/*==============================
+    PASSWORD TOGGLE
+==============================*/
+
+.password-wrapper{
+
+    position:relative;
+
+}
+
+.password-wrapper input{
+
+    width:100%;
+    padding-right:45px;
+
+}
+
+.toggle-password{
+
+    position:absolute;
+
+    right:15px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    cursor:pointer;
+
+    color:#888;
+
+    transition:.3s;
+
+}
+
+.toggle-password:hover{
+
+    color:var(--primary);
+
+}
+
+/*==================================================
+                FILE INPUT
+==================================================*/
+
+.project-form input[type=file]{
+
+    padding:10px;
+
+    cursor:pointer;
+
+}
+
+.project-form input[type=file]::file-selector-button{
+
+    background:var(--primary);
+
+    color:#08111f;
+
+    border:none;
+
+    border-radius:8px;
+
+    padding:10px 18px;
+
+    cursor:pointer;
+
+    margin-right:15px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.project-form input[type=file]::file-selector-button:hover{
+
+    transform:translateY(-2px);
+
+}
+
+/*==================================================
+                BUTTON
+==================================================*/
+
+.project-form .btn{
+
+    width:100%;
+
+    margin-top:15px;
+
+    padding:15px;
+
+    font-size:17px;
+
+    border-radius:12px;
+
+}
+
+/*==================================================
+                RESPONSIVE
+==================================================*/
+
+@media(max-width:768px){
+
+    .project-form{
+
+        padding:25px;
+
+    }
+
+}
+
+/*=====================================
+        IMAGE PREVIEW
+=====================================*/
+
+.image-upload{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+.preview-image{
+
+    width:100%;
+
+    max-width:420px;
+
+    height:240px;
+
+    margin:auto;
+
+    object-fit:cover;
+
+    border-radius:18px;
+
+    border:2px dashed rgba(56,189,248,.35);
+
+    background:rgba(255,255,255,.05);
+
+    transition:.35s;
+
+}
+
+.preview-image:hover{
+
+    transform:scale(1.02);
+
+}

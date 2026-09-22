@@ -1,0 +1,767 @@
+/* ==========================================
+HOME PAGE
+Hero Section
+==========================================*/
+
+.hero{
+
+    min-height:90vh;
+
+    display:grid;
+
+    grid-template-columns:380px 1fr;
+
+    align-items:center;
+
+    gap:80px;
+
+    padding:50px 0;
+
+}
+
+/* Left Column */
+
+.hero-image{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:flex-start;
+
+}
+
+/* Right Column */
+
+.hero-content{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+}
+
+/* Greeting */
+
+.intro{
+
+    font-size:22px;
+
+    color:var(--text);
+
+    margin-bottom:10px;
+
+    letter-spacing:.5px;
+
+}
+
+/* Your Name */
+
+.name{
+
+    color:var(--primary);
+
+    font-weight:700;
+
+}
+
+/* Profession */
+
+.hero-content h1{
+
+    font-size:35px;
+
+    line-height:1.2;
+
+    margin-bottom:16px;
+
+    color:white;
+
+}
+
+/* Typing Text */
+
+.typing-container{
+
+    display:flex;
+
+    align-items:center;
+
+    margin-bottom:15px;
+
+    font-size:22px;
+
+    font-weight:600;
+
+    color:var(--primary);
+
+}
+
+/* Cursor */
+
+.cursor{
+
+    margin-left:5px;
+
+    animation:blink .8s infinite;
+
+}
+
+@keyframes blink{
+
+    0%{opacity:1;}
+
+    50%{opacity:0;}
+
+    100%{opacity:1;}
+
+}
+
+/* Description */
+
+.description{
+
+    max-width:700px;
+
+    color:var(--muted);
+
+    font-size:18px;
+
+    line-height:1.9;
+
+    margin-top:15px;
+
+}
+
+/*==========================================
+    PROFILE IMAGE
+==========================================*/
+
+.image-frame{
+
+    width:240px;
+
+    height:240px;
+
+    border-radius:50%;
+
+    position:relative;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    overflow:hidden;
+
+    background:linear-gradient(
+        135deg,
+        rgba(56,189,248,.18),
+        rgba(139,92,246,.18)
+    );
+
+    border:3px solid rgba(56,189,248,.55);
+
+    box-shadow:
+        0 0 25px rgba(56,189,248,.25),
+        0 0 50px rgba(56,189,248,.15);
+
+    transition:all .45s ease;
+
+    animation:floatPhoto 5s ease-in-out infinite;
+
+}
+
+/* Outer Neon Ring */
+
+.image-frame::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-8px;
+
+    border-radius:50%;
+
+    border:2px solid rgba(56,189,248,.18);
+
+    animation:ringRotate 12s linear infinite;
+
+}
+
+/* Profile Image */
+
+.image-frame img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    transition:transform .45s ease;
+
+}
+
+/* Hover Effect */
+
+.image-frame:hover{
+
+    box-shadow:
+        0 0 35px rgba(56,189,248,.45),
+        0 0 70px rgba(56,189,248,.25);
+
+}
+
+.image-frame:hover img{
+
+    transform:scale(1.06);
+
+}
+
+/* Floating Animation */
+
+@keyframes floatPhoto{
+
+    0%{
+
+        transform:translateY(0px);
+
+    }
+
+    50%{
+
+        transform:translateY(-10px);
+
+    }
+
+    100%{
+
+        transform:translateY(0px);
+
+    }
+
+}
+
+/* Rotating Ring */
+
+@keyframes ringRotate{
+
+    from{
+
+        transform:rotate(0deg);
+
+    }
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+/*==========================================
+    HERO CONTENT
+==========================================*/
+
+/* Main Content */
+
+.hero-content{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    animation:fadeRight .8s ease;
+}
+
+/* Greeting */
+
+.intro{
+
+    font-size:22px;
+
+    font-weight:400;
+
+    color:var(--text);
+
+    margin-bottom:8px;
+
+    letter-spacing:.5px;
+
+}
+
+/* Name */
+
+.name{
+
+    color:var(--primary);
+
+    font-weight:700;
+
+    text-shadow:
+        0 0 8px rgba(56,189,248,.45);
+
+    animation:glow 3s ease-in-out infinite;
+}
+
+/* Main Heading */
+
+.hero-content h1{
+
+    font-size:58px;
+
+    font-weight:700;
+
+    line-height:1.2;
+
+    color:var(--white);
+
+    margin-bottom:18px;
+
+    font-family:'Orbitron',sans-serif;
+}
+
+/* Typing Animation Area */
+
+.typing-container{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:5px;
+
+    min-height:35px;
+
+    margin-bottom:28px;
+
+    font-size:22px;
+
+    font-weight:600;
+
+    color:var(--primary);
+}
+
+/* Typing Text */
+
+#typing-text{
+
+    letter-spacing:.5px;
+
+}
+
+/* Description */
+
+.description{
+
+    max-width:700px;
+
+    font-size:18px;
+
+    line-height:1.9;
+
+    color:var(--muted);
+
+    margin-bottom:35px;
+}
+
+/*==========================================
+    TECHNOLOGY BADGES
+==========================================*/
+
+.tech-stack{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+
+    margin-bottom:35px;
+}
+
+.tech-stack span{
+
+    padding:10px 18px;
+
+    border-radius:30px;
+
+    background:rgba(56,189,248,.08);
+
+    border:1px solid rgba(56,189,248,.25);
+
+    color:var(--primary);
+
+    font-size:15px;
+
+    transition:all .35s ease;
+
+    cursor:default;
+}
+
+.tech-stack span:hover{
+
+    transform:translateY(-4px);
+
+    background:rgba(56,189,248,.16);
+
+    box-shadow:
+        0 0 18px rgba(56,189,248,.25);
+}
+
+/*==========================================
+    HERO BUTTONS
+==========================================*/
+
+.hero-buttons{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+    margin-bottom:40px;
+
+    flex-wrap:wrap;
+
+}
+
+/* Download CV */
+
+.hero-buttons .btn-primary{
+
+    min-width:190px;
+
+    height:55px;
+
+    border-radius:12px;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    transition:all .35s ease;
+
+}
+
+.hero-buttons .btn-primary:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+        0 0 18px rgba(56,189,248,.45),
+        0 0 35px rgba(56,189,248,.18);
+
+}
+
+/* View Projects */
+
+.hero-buttons .btn-outline{
+
+    min-width:190px;
+
+    height:55px;
+
+    border-radius:12px;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    transition:all .35s ease;
+
+}
+
+.hero-buttons .btn-outline:hover{
+
+    transform:translateY(-4px);
+
+}
+
+/* Icons inside buttons */
+
+.hero-buttons i{
+
+    margin-right:10px;
+
+    font-size:15px;
+
+}
+
+
+/*==========================================
+    HERO ENTRY ANIMATION
+==========================================*/
+
+.hero-image{
+
+    animation:fadeLeft .9s ease;
+
+}
+
+.hero-content{
+
+    animation:fadeRight .9s ease;
+
+}
+
+/*==========================================
+    SPACING IMPROVEMENTS
+==========================================*/
+
+.hero-content>*{
+
+    margin-left:4px;
+
+}
+
+/*==========================================
+    SUBTLE TEXT SELECTION
+==========================================*/
+
+.hero ::selection{
+
+    background:var(--primary);
+
+    color:#08111f;
+
+}
+
+/*==========================================
+    RESPONSIVE DESIGN
+==========================================*/
+
+/* ---------- Large Tablets ---------- */
+
+@media (max-width: 1100px){
+
+    .hero{
+
+        grid-template-columns:300px 1fr;
+
+        gap:50px;
+
+    }
+
+    .image-frame{
+
+        width:280px;
+
+        height:280px;
+
+    }
+
+    .hero-content h1{
+
+        font-size:48px;
+
+    }
+
+}
+
+/* ---------- Tablets ---------- */
+
+@media (max-width: 900px){
+
+    .hero{
+
+        grid-template-columns:1fr;
+
+        text-align:center;
+
+        gap:45px;
+
+        padding:50px 0;
+
+    }
+
+    .hero-image{
+
+        justify-content:center;
+
+        align-items:center;
+
+        order:1;
+
+    }
+
+    .hero-content{
+
+        order:2;
+
+        align-items:center;
+
+    }
+
+    .hero-content>*{
+
+        margin-left:0;
+
+    }
+
+    .description{
+
+        max-width:650px;
+
+    }
+
+    .hero-buttons{
+
+        justify-content:center;
+
+    }
+
+    .social-links{
+
+        justify-content:center;
+
+    }
+
+    .tech-stack{
+
+        justify-content:center;
+
+    }
+
+}
+
+/* ---------- Mobile Phones ---------- */
+
+@media (max-width:600px){
+
+    .hero{
+
+        gap:35px;
+
+        padding:35px 0;
+
+    }
+
+    /* Smaller photo as requested */
+
+    .image-frame{
+
+        width:220px;
+
+        height:220px;
+
+    }
+
+    .intro{
+
+        font-size:18px;
+
+    }
+
+    .hero-content h1{
+
+        font-size:34px;
+
+        line-height:1.3;
+
+    }
+
+    .typing-container{
+
+        font-size:18px;
+
+        justify-content:center;
+
+    }
+
+    .description{
+
+        font-size:16px;
+
+        line-height:1.8;
+
+        padding:0 10px;
+
+    }
+
+    .hero-buttons{
+
+        flex-direction:column;
+
+        width:100%;
+
+    }
+
+    .hero-buttons .btn-primary,
+
+    .hero-buttons .btn-outline{
+
+        width:100%;
+
+        max-width:280px;
+
+    }
+
+    .tech-stack{
+
+        gap:10px;
+
+    }
+
+    .tech-stack span{
+
+        font-size:14px;
+
+        padding:8px 15px;
+
+    }
+
+    .social-links{
+
+        gap:15px;
+
+    }
+
+    .social-links a{
+
+        width:45px;
+
+        height:45px;
+
+        font-size:18px;
+
+    }
+
+}
+
+/* ---------- Very Small Phones ---------- */
+
+@media (max-width:380px){
+
+    .image-frame{
+
+        width:190px;
+
+        height:190px;
+
+    }
+
+    .hero-content h1{
+
+        font-size:28px;
+
+    }
+
+    .description{
+
+        font-size:15px;
+
+    }
+
+}
