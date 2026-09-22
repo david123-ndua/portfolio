@@ -76,7 +76,7 @@ def init_db():
     conn.commit()
     conn.close()
     
-    def seed_admin():
+def seed_admin():
     """Create a default admin if the admins table is empty."""
     conn = get_db_connection()
 
