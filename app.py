@@ -27,10 +27,11 @@ from itsdangerous import (
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-from db import get_db_connection
+from db import get_db_connection, init_db
 load_dotenv()
 
 app = Flask(__name__)
+init_db() 
 
 @app.context_processor
 def inject_current_year():
