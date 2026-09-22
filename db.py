@@ -75,3 +75,34 @@ def init_db():
 
     conn.commit()
     conn.close()
+    
+    def seed_admin():
+    """Create a default admin if the admins table is empty."""
+    conn = get_db_connection()
+
+    existing = conn.execute(
+        "SELECT COUNT(*) FROM admins"
+    ).fetchone()[0]
+
+    if existing == 0:
+        from werkzeug.security import generate_password_hash
+
+        username = os.getenv("ADMIN_USERNAME", "admin")
+        email = os.getenv("ADMIN_EMAIL", "admin@example.com")
+        password = os.getenv("ADMIN_PASSWORD", "changeme123")
+
+        conn.execute(
+            """
+            INSERT INTO admins (username, email, password_hash)
+            VALUES (?, ?, ?)
+            """,
+            (
+                username,
+                email,
+                generate_password_hash(password)
+            )
+        )
+        conn.commit()
+        print(f"✅ Default admin created: {username}")
+
+    conn.close()
